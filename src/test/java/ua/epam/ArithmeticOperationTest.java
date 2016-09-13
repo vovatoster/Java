@@ -14,6 +14,8 @@ public class ArithmeticOperationTest {
         arithmeticOperation = new ArithmeticOperation();
     }
 
+
+
     @Test
     public void add() throws Exception {
         Assert.assertEquals(arithmeticOperation.add(5.0, 7.0), 13.0, 0);
