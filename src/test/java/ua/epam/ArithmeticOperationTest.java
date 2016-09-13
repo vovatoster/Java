@@ -35,4 +35,10 @@ public class ArithmeticOperationTest {
         Assert.assertEquals(arithmeticOperation.div(10.0, 5.0), 2.0, 0);
     }
 
+    @Test(expected=ArithmeticException.class)
+    public void divWithException(){
+        arithmeticOperation.div(5.0, 0.0);
+    }
+
+
 }
