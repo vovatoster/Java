@@ -11,11 +11,6 @@ public class Main {
     }
 
     static int rand (int bottom, int top){
-        if (bottom < top){
-            int tmp = top;
-            top = bottom;
-            bottom = tmp;
-        }
         Random random = new Random();
         return random.nextInt(top - bottom + 1) + bottom;
     }
@@ -54,11 +49,8 @@ public class Main {
     public static void main(String[] args) {
         int bottom = 0;
         int top = 100;
-        int number = rand (10, 5);
+        int number = rand (bottom, top);
         int count = 0;
         guess(number, top, bottom, count);
-        Random random = new Random();
-        number = random.nextInt(-10);
-        System.out.println(number);
     }
 }
