@@ -20,7 +20,7 @@ public class Main {
         int [] result = new int[j];
         System.arraycopy(res, 0, result, 0, j);
         return result;
-        
+
     }
 }
 

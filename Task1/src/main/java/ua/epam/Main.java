@@ -1,5 +1,6 @@
 package ua.epam;
 
+import java.awt.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,8 +13,10 @@ public class Main {
 
     static int rand (int bottom, int top){
         Random random = new Random();
-        return random.nextInt(top - bottom + 1) + bottom;
+        return random.nextInt(top - bottom) + bottom;
     }
+
+
     static void guess(int number, int top, int bottom, int count){
         System.out.println("Input has to be in range [" + bottom + ";" + top + "]");
         Scanner scanner = new Scanner(System.in);
@@ -23,16 +26,6 @@ public class Main {
 
             if ((input < top) && (input > bottom)) {
                 count ++;
-                if (number == input) {
-                    System.out.println("Congratulations! Secret number is " + input);
-                    System.out.println("You won with " + count + " atempt(s)");
-                } else if (number > input) {
-                    bottom = input;
-                    guess(number, top, input, count);
-                } else if (number < input) {
-                    top = input;
-                    guess(number, top, bottom, count);
-                }
             }
             else{
                 System.out.print("Invalid data. Your ");
@@ -52,5 +45,6 @@ public class Main {
         int number = rand (bottom, top);
         int count = 0;
         guess(number, top, bottom, count);
+
     }
 }
